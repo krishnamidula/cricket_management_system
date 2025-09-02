@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rules</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: #fff;
+            background: url('images/pexels-therato-3374210.jpg') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            padding: 50px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            margin: 50px auto;
+            max-width: 800px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        p, ul {
+            color: #fff;
+            font-size: 20px;
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        /* Back Button */
+        .back-btn {
+            padding: 10px;
+            width: 200px;
+            font-size: 18px;
+            background-color: #d71784;
+            color: white;
+            border-radius: 8px;
+            margin: 30px auto;
+            text-align: center;
+            cursor: pointer;
+            display: block;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .back-btn:hover {
+            background-color: #9ca3a0;
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Event Rules</h1>
+        
+        <h2>Overview</h2>
+        <p>The Cricket Player Management System is designed to manage players' selection across franchises in a sporting event, such as the IPL. The system allows event managers to manage player data, track franchise selections, and enforce event-specific rules.</p>
+
+        <h2>Business Rules</h2>
+        <ul>
+            <li>User Types: Event Managers and Franchises.</li>
+            <li>Player Data: Includes role, country, strength ratings (batting, bowling, fielding), and initial price.</li>
+            <li>Franchise Functionality: Login, view player pool, and select players.</li>
+            <li>Event Manager Functionality: Player pool creation, rules, and franchise selection approval.</li>
+            <li>Rule Validation: Ensures compliance with budget limits and foreign player caps.</li>
+        </ul>
+
+        <h2>Tables</h2>
+        <ul>
+            <li>Franchise Information</li>
+            <li>Player Details</li>
+            <li>Administrator Information</li>
+            <li>Rules</li>
+            <li>Registration Details</li>
+            <li>Team Selection</li>
+            <li>Player Availability</li>
+            <li>Login Audit</li>
+            <li>Player Injury Details</li>
+            <li>Franchise Budget Allocation History</li>
+            <li>Player Auction History</li>
+            <li>Franchise Player Distribution by Role</li>
+            <li>Team Composition Summary</li>
+        </ul>
+
+        <h2>Outputs</h2>
+        <ul>
+            <li>Admin View: Franchise-wise and player-wise selections.</li>
+            <li>Franchise View: Available players, selected players, and rule compliance.</li>
+            <li>Player View: Strength-wise, country-wise, and availability status.</li>
+        </ul>
+
+        <a href="franchise-dashboard.html" class="back-btn">Back to Dashboard</a> <!-- Link back to Franchise Dashboard -->
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,135 @@
+/* Dashboard Style */
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: #F3ECE2; /* Warm beige background */
+    color: #333;
+}
+
+h1 {
+    color: #b19dc6; /* Lavender */
+    margin-bottom: 30px;
+}
+
+.card {
+    background-color: #1c89a1; /* Light beige card background */
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #c8d0c8; /* Sage green title */
+}
+
+.card-content p {
+    color: #010000; /* Muted text color */
+}
+
+.card-action a {
+    background-color: #36728e; /* Sage green buttons */
+    color: white;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-action a:hover {
+    background-color: #560056; /* Lavender on hover */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    margin-top: 50px;
+}
+
+.btn {
+    background-color: #d168d1; /* Lavender background */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: none; /* No shadow */
+    padding: 10px 25px; /* Custom padding */
+}
+
+.btn:hover {
+    background-color: #e616e6; /* Sage green on hover */
+}
+.dashboard-playerbackground {
+    background-image: url('images/dashboard-playerbackground.jpeg'); /* Path to your background image */
+    background-size: cover; /* Cover the entire area */
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh; /* Make sure the background covers full height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Style cards to stand out on the background */
+.card {
+    background-color: rgba(213, 116, 116, 0.9); /* Transparent white background */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Slight shadow */
+}
+
+/* Customize buttons */
+.card-action a {
+    background-color: #c12626; /* Lavender color */
+    padding: 10px 20px;
+    color: rgb(239, 134, 134);
+    font-weight: bold;
+    border-radius: 5px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+.card-action a:hover {
+    background-color: #369ba3; /* Sage green on hover */
+}
+/* Add background image to the body or specific container */
+.dashboard-adminbackground {
+    background-image: url('images/dashboard-adminbackground.jpeg'); /* Path to your background image */
+    background-size: cover; /* Cover the entire area */
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh; /* Make sure the background covers full height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Style cards to stand out on the background */
+.card {
+    background-color: rgba(255, 255, 255, 0.9); /* Transparent white background */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Slight shadow */
+}
+
+/* Customize buttons */
+.card-action a {
+    background-color: #d05050; /* Lavender color */
+    padding: 10px 20px;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+.card-action a:hover {
+    background-color: #bea524; /* Sage green on hover */
+}
+
+/* Additional styling for footer or other sections */
+footer {
+    margin-top: 50px;
+    padding: 20px;
+    text-align: center;
+    color: #C8A2C8; /* Lavender */
+}

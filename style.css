@@ -1,0 +1,126 @@
+/* General body and background styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    color: #070000c3;
+    background: url('images/cricket-icon.jpeg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* Title Section (Full-screen background with title) */
+.title-section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+}
+
+.title-section h1 {
+    font-size: 80px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    color: #84ca8c;
+}
+
+/* Scroll down section (Transparent background for login icons) */
+.login-section {
+    min-height: 100vh;
+    padding: 50px 0;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background to maintain the cricket-field image with opacity */
+}
+
+.login-options {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Card-style option for each role (Admin, Franchise, Player) */
+.option {
+    margin: 0 20px;
+    text-align: center;
+}
+
+.card {
+    width: 350px;
+    height: 450px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.1); /* Transparent card background */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+}
+
+.card-content {
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+    color: rgb(123, 171, 117);
+    text-align: center;
+}
+
+.card h2 {
+    font-size: 35px;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.card p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.card a.button {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 18px;
+    background: linear-gradient(to right, #4ac164, #1a7953);
+    color: rgb(12, 1, 1);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    margin-top: 170px; /* To move it down */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s;
+}
+
+.card a.button:hover {
+    background: linear-gradient(to right, #1a7953, #4ac164);
+    transform: translateY(-5px); /* Move slightly up on hover */
+    box-shadow: 0 8px 15px rgba(0, 255, 0, 0.5); /* Add glowing shadow effect */
+}
+
+/* Background Images for the cards */
+.admin .card {
+    background: url('images/admin-background.png') no-repeat center center;
+    background-size: cover;
+}
+
+.franchise .card {
+    background: url('images/franchise-background.png') no-repeat center center;
+    background-size: cover;
+}
+
+.player .card {
+    background: url('images/26fd56af-c2cd-49e9-87db-a59c26738f4a_1.jpeg ') no-repeat center center;
+    background-size: cover;
+}
+
+/* Footer */
+.footer {
+    margin-top: 50px;
+    padding: 20px;
+    background-color: #333;
+    color: rgb(17, 1, 1);
+    text-align: center;
+}

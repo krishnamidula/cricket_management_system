@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <!-- Import Materialize CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+    <!-- Custom Dashboard CSS -->
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        /* Ensure the background image covers the entire page */
+        .dashboard-adminbackground {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('images/pexels-therato-3374210.jpg') no-repeat center center fixed;
+            background-size: cover;
+            z-index: -1;
+        }
+
+        /* Title Section (Fixed full-screen background with title) */
+        .title-section {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+            position: relative;
+            z-index: 1;
+        }
+
+        .title-section h1 {
+            font-size: 80px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            color: #fff;
+            transition: transform 0.5s ease, opacity 0.5s ease; /* Smooth scaling and opacity transition */
+        }
+
+        /* Scroll down section (Transparent background for the admin buttons) */
+        .dashboard-section {
+            min-height: 100vh;
+            padding: 50px 0;
+            background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+            position: relative;
+            z-index: 2;
+        }
+
+        .dashboard-options {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            opacity: 0; /* Hidden initially */
+            transform: translateY(100px); /* Move down initially */
+            transition: opacity 1s ease, transform 1s ease; /* Smooth fade-in and move-up effect */
+        }
+
+        /* Card-style options for franchise and player views */
+        .card {
+            width: 350px;
+            height: auto;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.1); /* Transparent card background */
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+        }
+
+        .card-content {
+            padding: 20px;
+            text-align: center;
+            flex-grow: 1;
+        }
+
+        .card h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .card p {
+            font-size: 18px;
+            margin-bottom: 20px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Custom buttons with border and hover effect */
+        .btn {
+            display: inline-block;
+            width: 90%; /* Makes the button fit the container */
+            padding: 30px 0; /* Adjust padding (top and bottom) */
+            font-size: 22px; /* Adjust the font size */
+            background-color: #d71784; /* Button background color */
+            color: white; /* Text color */
+            border: 2px solid #fff; /* Add a border */
+            border-radius: 8px; /* Rounded corners */
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        
+        .btn:hover {
+            background-color: #9ca3a0; /* Button hover effect */
+            transform: translateY(-2px); /* Slight lift on hover */
+        }
+        
+        /* Footer */
+        .footer {
+            margin-top: 50px;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            text-align: center;
+        }
+
+        /* Adjust button container to fit well inside the card */
+        .card-action {
+            padding: 20px 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Background image container -->
+    <div class="dashboard-adminbackground"></div>
+
+    <div class="title-section">
+        <h1 id="main-title">Admin Dashboard</h1>
+    </div>
+
+    <!-- Info Section -->
+    <div class="info-section">
+        <div class="container white-text center-align">
+            <h5>The Admin Dashboard provides essential tools to monitor and manage franchise and player selections. Admins can oversee team compositions, approve selections, and ensure rule compliance throughout the tournament.</h5>
+        </div>
+    </div>
+
+    <div class="dashboard-section" id="dashboard-section">
+        <div class="dashboard-options">
+            <div class="card">
+                <div class="card-content">
+                    <h2>Franchise-wise View</h2>
+                    <p>View and manage all franchises. Monitor player selections and approve them as per event rules.</p>
+                </div>
+                <div class="card-action">
+                    <!-- Link to Franchise-wise Dashboard -->
+                    <a href="franchise-wise admin.html" class="btn waves-effect waves-light">Go to Franchise</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <h2>Player-wise View</h2>
+                    <p>View and manage players. Check their availability and selection across franchises.</p>
+                </div>
+                <div class="card-action">
+                    <!-- Link to Player-wise Dashboard -->
+                    <a href="player-wise admin.html" class="btn waves-effect waves-light">Go to Player</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">© 2024 Cricket Management System</div>
+
+    <script>
+        // JavaScript for smooth fade and scale effects during scroll
+        window.addEventListener('scroll', function() {
+            const title = document.getElementById('main-title');
+            const dashboardOptions = document.querySelector('.dashboard-options');
+            const scrollY = window.scrollY;
+
+            // Fade and scale title on scroll
+            if (scrollY < 400) {
+                const scaleValue = 1 - scrollY / 1000; // Scale down from 1 to 0.6
+                const opacityValue = 1 - scrollY / 400; // Fade out from 1 to 0
+                title.style.transform = `scale(${scaleValue})`;
+                title.style.opacity = opacityValue;
+            }
+
+            // Fade-in and move up dashboard options after scrolling past 400px
+            if (scrollY >= 400) {
+                dashboardOptions.style.opacity = 1;
+                dashboardOptions.style.transform = 'translateY(0)';
+            } else {
+                dashboardOptions.style.opacity = 0;
+                dashboardOptions.style.transform = 'translateY(100px)';
+            }
+        });
+    </script>
+</body>
+</html>

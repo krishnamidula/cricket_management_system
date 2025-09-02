@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player Dashboard</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        .dashboard-playerbackground {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('images/dashboard-playerbackground.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            z-index: -1;
+        }
+
+        .title-section {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 1;
+        }
+
+        .title-section h1 {
+            font-size: 80px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            color: #fff;
+            transition: transform 0.5s ease, opacity 0.5s ease;
+        }
+
+        .dashboard-section {
+            min-height: 100vh;
+            padding: 50px 0;
+            background: rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 2;
+        }
+
+        .dashboard-options {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            opacity: 0;
+            transform: translateY(100px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+        .card {
+            width: 350px;
+            height: auto;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+        }
+
+        .card-content {
+            padding: 20px;
+            text-align: center;
+            flex-grow: 1;
+        }
+
+        .card h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .card p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            width: 90%;
+            padding: 30px 0;
+            font-size: 22px;
+            background-color: #c7d450;
+            color: white;
+            border: 2px solid #fff;
+            border-radius: 8px;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #9ca3a0;
+            transform: translateY(-2px);
+        }
+
+        .card-action {
+            padding: 20px 20px;
+            text-align: center;
+        }
+
+        .footer {
+            margin-top: 50px;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="dashboard-playerbackground"></div>
+
+    <div class="title-section">
+        <h1 id="main-title">Player Dashboard</h1>
+    </div>
+
+    <div class="dashboard-section" id="dashboard-section">
+        <div class="dashboard-options">
+            <div class="card">
+                <div class="card-content">
+                    <h2>Strength-wise Stats</h2>
+                    <p>View your performance based on your strengths.</p>
+                </div>
+                <div class="card-action">
+                    <a href="strength-wiseplayer.html" class="btn waves-effect waves-light">View Strength Stats</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <h2>Country-wise Stats</h2>
+                    <p>Track your performance country-wise.</p>
+                </div>
+                <div class="card-action">
+                    <a href="country-wiseplayer.html" class="btn waves-effect waves-light">View Country Stats</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <h2>Availability Status</h2>
+                    <p>Check your availability status for matches.</p>
+                </div>
+                <div class="card-action">
+                    <a href="availability-statusplayer.html" class="btn waves-effect waves-light">View Availability Status</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">© 2024 Cricket Management System</div>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const title = document.getElementById('main-title');
+            const dashboardOptions = document.querySelector('.dashboard-options');
+            const scrollY = window.scrollY;
+
+            if (scrollY < 400) {
+                const scaleValue = 1 - scrollY / 1000;
+                const opacityValue = 1 - scrollY / 400;
+                title.style.transform = `scale(${scaleValue})`;
+                title.style.opacity = opacityValue;
+            }
+
+            if (scrollY >= 400) {
+                dashboardOptions.style.opacity = 1;
+                dashboardOptions.style.transform = 'translateY(0)';
+            } else {
+                dashboardOptions.style.opacity = 0;
+                dashboardOptions.style.transform = 'translateY(100px)';
+            }
+        });
+    </script>
+
+</body>
+</html>
